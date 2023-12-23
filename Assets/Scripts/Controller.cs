@@ -33,18 +33,24 @@ public class Controller : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && cooldown <= 0 && GameManager.Instance.inGame)
         {
-            lunaController.SetDrop();
+            float mousePositionX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+            float max_X = wall.transform.position.x + margin;
+            if (-max_X <= mousePositionX && mousePositionX <= max_X)
+            {
+                lunaController.SetDrop();
 
-            GameObject currentBall = BallManager.Instance.balls[GameManager.Instance.currentBallIndex];
-            Vector3 position = luna_go.transform.position + Vector3.right * Random.Range(-1f,1f) * 0.01f;
-            GameObject newBall = Instantiate(currentBall, position, Quaternion.identity, BallManager.Instance.balls_parent.transform);
-            newBall.GetComponentInChildren<AudioSource>().enabled = false;
+                GameObject currentBall = BallManager.Instance.balls[GameManager.Instance.currentBallIndex];
+                Vector3 position = luna_go.transform.position + Vector3.right * Random.Range(-1f, 1f) * 0.01f;
+                position.z = 0;
+                GameObject newBall = Instantiate(currentBall, position, Quaternion.identity, BallManager.Instance.balls_parent.transform);
+                newBall.GetComponentInChildren<AudioSource>().enabled = false;
 
-            GameManager.Instance.currentBallIndex = GameManager.Instance.nextBallIndex;
-            GameManager.Instance.nextBallIndex = BallManager.GetRandomBall();
+                GameManager.Instance.currentBallIndex = GameManager.Instance.nextBallIndex;
+                GameManager.Instance.nextBallIndex = BallManager.GetRandomBall();
 
-            cooldown = 0.75f;
-            lunaController.Invoke("SetReady", cooldown);
+                cooldown = 0.75f;
+                lunaController.Invoke("SetReady", cooldown);
+            }
         }
     }
 

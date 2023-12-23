@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject bottomWall;
 
+    public static bool sfxEnabled = true;
+
     private void Start()
     {
         ballSprites = BallManager.Instance.sprites;
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateMaxHeight();
         image.sprite = ballSprites[nextBallIndex];
+
     }
 
     void UpdateMaxHeight()

@@ -174,8 +174,8 @@ TextureImporter:
       name: luna_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1000
+        y: 500
         width: 500
         height: 500
       alignment: 0
@@ -195,7 +195,7 @@ TextureImporter:
       name: luna_3
       rect:
         serializedVersion: 2
-        x: 500
+        x: 0
         y: 0
         width: 500
         height: 500
@@ -208,6 +208,27 @@ TextureImporter:
       bones: []
       spriteID: 045a2c084f38da146a200cf5ec0c6438
       internalID: 1616345428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: luna_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e2114d7f287624d89f4eb742d31840
+      internalID: 1056752279
       vertices: []
       indices: 
       edges: []
@@ -227,6 +248,7 @@ TextureImporter:
       luna_1: -1466942973
       luna_2: -122748722
       luna_3: 1616345428
+      luna_4: 1056752279
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

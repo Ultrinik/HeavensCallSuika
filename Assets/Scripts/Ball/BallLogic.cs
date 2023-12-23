@@ -14,6 +14,12 @@ public class BallLogic : MonoBehaviour
     private void Start()
     {
         Invoke("SetLanded", 1);
+
+        AudioSource audioSource = GetComponentInChildren<AudioSource>();
+        if (audioSource.enabled && GameManager.sfxEnabled)
+        {
+            GetComponentInChildren<AudioSource>().Play();
+        }
     }
 
     public void SetLanded()

@@ -10,6 +10,11 @@ public class LunaController : MonoBehaviour
     private void Update()
     {
         ChangePlanet(GameManager.Instance.currentBallIndex);
+
+        if (!GameManager.Instance.inGame)
+        {
+            SetLose();
+        }
     }
 
     public void ChangePlanet(int ballType)
@@ -28,5 +33,12 @@ public class LunaController : MonoBehaviour
         spriteRenderes[0].sprite = sprites[3];
         spriteRenderes[1].enabled = false;
         spriteRenderes[2].sprite = sprites[1];
+    }
+
+    public void SetLose()
+    {
+        spriteRenderes[0].enabled = false;
+        spriteRenderes[1].enabled = false;
+        spriteRenderes[2].sprite = sprites[4];
     }
 }
