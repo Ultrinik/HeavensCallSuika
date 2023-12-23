@@ -9,10 +9,7 @@ public class RestartButton : MonoBehaviour
 
     public void RestartGame()
     {
-        if (GameManager.sfxEnabled)
-        {
-            MusicManager.Instance.sfxAudioSource.PlayOneShot(resetSound);
-        }
+        MusicManager.PlaySound(resetSound, 1);
 
         SceneManager.LoadScene("SampleScene");
     }

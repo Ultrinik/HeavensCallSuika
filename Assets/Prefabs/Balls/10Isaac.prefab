@@ -255,6 +255,11 @@ MonoBehaviour:
   flaggedToFuse: 0
   ballType: 10
   landed: 0
+  spriteRenderer: {fileID: 7613428480737975880}
+  sprites:
+  - {fileID: 21300000, guid: 91cc310d232b6ad4b8a09b12415c9480, type: 3}
+  - {fileID: 21300000, guid: 91cc310d232b6ad4b8a09b12415c9480, type: 3}
+  - {fileID: 21300000, guid: 91cc310d232b6ad4b8a09b12415c9480, type: 3}
 --- !u!1 &5757138865763883670
 GameObject:
   m_ObjectHideFlags: 0

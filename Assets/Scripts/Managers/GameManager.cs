@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour
 
     public static bool sfxEnabled = true;
 
+    public AudioClip loseSound;
+
     private void Start()
     {
         ballSprites = BallManager.Instance.sprites;
@@ -68,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         if (inGame)
         {
+            MusicManager.PlaySound(loseSound, 1);
             inGame = false;
         }
     }

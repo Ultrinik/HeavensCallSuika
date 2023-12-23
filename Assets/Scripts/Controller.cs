@@ -8,7 +8,7 @@ public class Controller : MonoBehaviour
     GameObject luna_go;
 
     public GameObject wall;
-    float margin = 0.5f;
+    float margin = 0.85f;
 
     float cooldown = 0;
 
@@ -57,8 +57,8 @@ public class Controller : MonoBehaviour
    void MoveLuna()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePosition.y = 3.75f;
-        mousePosition.z = 0;
+        mousePosition.y = 3.91f;
+        mousePosition.z = -5;
 
         float max_X = wall.transform.position.x - margin;
         float current_X = Mathf.Abs(mousePosition.x);

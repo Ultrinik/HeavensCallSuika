@@ -31,4 +31,13 @@ public class MusicManager : MonoBehaviour
         audioSource = audioSources[0];
         sfxAudioSource = audioSources[1];
     }
+
+    public static void PlaySound(AudioClip clip, float volume)
+    {
+
+        if (GameManager.sfxEnabled)
+        {
+            Instance.sfxAudioSource.PlayOneShot(clip, volume);
+        }
+    }
 }
