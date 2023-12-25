@@ -87,7 +87,7 @@ Material:
     - _SpecularHighlights: 1
     - _Speed: 0.2
     - _SrcBlend: 1
-    - _Temperature: 0.75
+    - _Temperature: 1
     - _Twist: 10
     - _UVSec: 0
     - _ZWrite: 1

@@ -30,6 +30,11 @@ public class BallLogic : MonoBehaviour
         }
 
         rb = GetComponent<Rigidbody2D>();
+
+        if (GameManager.onlyCircles)
+        {
+            GetComponent<PolygonCollider2D>().enabled = false;
+        }
     }
 
     public void SetLanded()

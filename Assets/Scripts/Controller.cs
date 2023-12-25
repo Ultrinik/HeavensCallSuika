@@ -8,7 +8,7 @@ public class Controller : MonoBehaviour
     GameObject luna_go;
 
     public GameObject wall;
-    float margin = 0.85f;
+    float[] marginArr = new float[] {0.36f, 0.52f, 0.61f,  0.651f, 0.733f, 0.91f, 1.1f, 1.19f, 1.688f, 1.91f, 2.26f};
 
     float cooldown = 0;
 
@@ -31,9 +31,10 @@ public class Controller : MonoBehaviour
 
     void OnMouseClick()
     {
-        if (Input.GetMouseButtonDown(0) && cooldown <= 0 && GameManager.Instance.inGame)
+        if (Input.GetMouseButtonUp(0) && cooldown <= 0 && GameManager.Instance.inGame)
         {
             float mousePositionX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
+            float margin = marginArr[GameManager.Instance.currentBallIndex];
             float max_X = wall.transform.position.x + margin;
             if (-max_X <= mousePositionX && mousePositionX <= max_X)
             {
@@ -60,12 +61,13 @@ public class Controller : MonoBehaviour
         mousePosition.y = 3.91f;
         mousePosition.z = -5;
 
+        float margin = marginArr[GameManager.Instance.currentBallIndex];
         float max_X = wall.transform.position.x - margin;
         float current_X = Mathf.Abs(mousePosition.x);
 
         float new_X = Mathf.Min(max_X, current_X);
 
         mousePosition.x = Mathf.Sign(mousePosition.x) * new_X;
-        luna_go.transform.position = mousePosition;
+        luna_go.transform.position = Vector3.Lerp(luna_go.transform.position, mousePosition, Time.deltaTime*15);
     }
 }

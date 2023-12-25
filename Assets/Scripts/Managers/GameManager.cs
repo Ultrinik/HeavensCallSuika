@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    private void Awake()
+    private void InitAwake()
     {
         Instance = this;
     }
@@ -28,15 +28,21 @@ public class GameManager : MonoBehaviour
     public GameObject bottomWall;
 
     public static bool sfxEnabled = true;
+    public static bool onlyCircles = false;
+    public static bool onlyFlagCircles = false;
 
     public AudioClip loseSound;
 
-    private void Start()
+    private void Awake()
     {
+        InitAwake();
+
         ballSprites = BallManager.Instance.sprites;
 
         currentBallIndex = BallManager.GetRandomBall();
         nextBallIndex = BallManager.GetRandomBall();
+
+        onlyCircles = onlyFlagCircles;
     }
 
     void Update()

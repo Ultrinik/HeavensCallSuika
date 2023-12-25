@@ -44,6 +44,6 @@ public class BallManager : MonoBehaviour
 
     public static int GetRandomBall()
     {
-        return Random.Range(0, 5);
+        return Random.Range(0,5);
     }
 }
